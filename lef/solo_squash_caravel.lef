@@ -1,0 +1,270 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO solo_squash_caravel
+  CLASS BLOCK ;
+  FOREIGN solo_squash_caravel ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 200.000 BY 200.000 ;
+  PIN blue
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 164.310 196.000 164.590 199.000 ;
+    END
+  END blue
+  PIN debug_design_reset
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 1.000 68.040 4.000 68.640 ;
+    END
+  END debug_design_reset
+  PIN debug_gpio_ready
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 67.710 196.000 67.990 199.000 ;
+    END
+  END debug_gpio_ready
+  PIN debug_oeb[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 163.240 199.000 163.840 ;
+    END
+  END debug_oeb[0]
+  PIN debug_oeb[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 95.240 199.000 95.840 ;
+    END
+  END debug_oeb[1]
+  PIN design_oeb[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 27.240 199.000 27.840 ;
+    END
+  END design_oeb[0]
+  PIN design_oeb[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 196.510 196.000 196.790 199.000 ;
+    END
+  END design_oeb[1]
+  PIN design_oeb[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 128.890 1.000 129.170 4.000 ;
+    END
+  END design_oeb[2]
+  PIN design_oeb[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 1.000 102.040 4.000 102.640 ;
+    END
+  END design_oeb[3]
+  PIN design_oeb[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 1.000 34.040 4.000 34.640 ;
+    END
+  END design_oeb[4]
+  PIN design_oeb[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 161.090 1.000 161.370 4.000 ;
+    END
+  END design_oeb[5]
+  PIN down_key_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 0.090 1.000 0.370 4.000 ;
+    END
+  END down_key_n
+  PIN ext_reset_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 32.290 1.000 32.570 4.000 ;
+    END
+  END ext_reset_n
+  PIN gpio_ready
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 99.910 196.000 100.190 199.000 ;
+    END
+  END gpio_ready
+  PIN green
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 193.290 1.000 193.570 4.000 ;
+    END
+  END green
+  PIN hsync
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 64.490 1.000 64.770 4.000 ;
+    END
+  END hsync
+  PIN new_game_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 35.510 196.000 35.790 199.000 ;
+    END
+  END new_game_n
+  PIN pause_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 129.240 199.000 129.840 ;
+    END
+  END pause_n
+  PIN red
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 1.000 170.040 4.000 170.640 ;
+    END
+  END red
+  PIN speaker
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 132.110 196.000 132.390 199.000 ;
+    END
+  END speaker
+  PIN up_key_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 96.690 1.000 96.970 4.000 ;
+    END
+  END up_key_n
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 21.040 10.640 22.640 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 174.640 10.640 176.240 187.920 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 97.840 10.640 99.440 187.920 ;
+    END
+  END vssd1
+  PIN vsync
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 1.000 136.040 4.000 136.640 ;
+    END
+  END vsync
+  PIN wb_clk_i
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 3.310 196.000 3.590 199.000 ;
+    END
+  END wb_clk_i
+  PIN wb_rst_i
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 61.240 199.000 61.840 ;
+    END
+  END wb_rst_i
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 194.120 187.765 ;
+      LAYER met1 ;
+        RECT 0.070 10.640 196.810 187.920 ;
+      LAYER met2 ;
+        RECT 0.100 195.720 3.030 196.000 ;
+        RECT 3.870 195.720 35.230 196.000 ;
+        RECT 36.070 195.720 67.430 196.000 ;
+        RECT 68.270 195.720 99.630 196.000 ;
+        RECT 100.470 195.720 131.830 196.000 ;
+        RECT 132.670 195.720 164.030 196.000 ;
+        RECT 164.870 195.720 196.230 196.000 ;
+        RECT 0.100 4.280 196.780 195.720 ;
+        RECT 0.650 4.000 32.010 4.280 ;
+        RECT 32.850 4.000 64.210 4.280 ;
+        RECT 65.050 4.000 96.410 4.280 ;
+        RECT 97.250 4.000 128.610 4.280 ;
+        RECT 129.450 4.000 160.810 4.280 ;
+        RECT 161.650 4.000 193.010 4.280 ;
+        RECT 193.850 4.000 196.780 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 171.040 196.000 187.845 ;
+        RECT 4.400 169.640 196.000 171.040 ;
+        RECT 4.000 164.240 196.000 169.640 ;
+        RECT 4.000 162.840 195.600 164.240 ;
+        RECT 4.000 137.040 196.000 162.840 ;
+        RECT 4.400 135.640 196.000 137.040 ;
+        RECT 4.000 130.240 196.000 135.640 ;
+        RECT 4.000 128.840 195.600 130.240 ;
+        RECT 4.000 103.040 196.000 128.840 ;
+        RECT 4.400 101.640 196.000 103.040 ;
+        RECT 4.000 96.240 196.000 101.640 ;
+        RECT 4.000 94.840 195.600 96.240 ;
+        RECT 4.000 69.040 196.000 94.840 ;
+        RECT 4.400 67.640 196.000 69.040 ;
+        RECT 4.000 62.240 196.000 67.640 ;
+        RECT 4.000 60.840 195.600 62.240 ;
+        RECT 4.000 35.040 196.000 60.840 ;
+        RECT 4.400 33.640 196.000 35.040 ;
+        RECT 4.000 28.240 196.000 33.640 ;
+        RECT 4.000 26.840 195.600 28.240 ;
+        RECT 4.000 10.715 196.000 26.840 ;
+      LAYER met4 ;
+        RECT 73.895 83.135 82.505 167.105 ;
+  END
+END solo_squash_caravel
+END LIBRARY
+

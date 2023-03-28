@@ -29,6 +29,16 @@
 		*  [MPRJ Stimulus](./README.md#mprj_stimulus)
 		*  [Wishbone Test](./README.md#wishbone-test)
 
+# WARNING: This information needs to be updated!!
+
+This README is basically an unmodified version from the template
+[`efabless/caravel_user_project`](https://github.com/efabless/caravel_user_project) repo,
+so might not be completely relevant to solo-squash-caravel.
+
+Hopefully I'll get around to updating this in due time.
+
+
+
 # Quick Launch for Designers
 
 ## Dependencies
