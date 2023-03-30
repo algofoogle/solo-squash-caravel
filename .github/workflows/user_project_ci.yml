@@ -95,6 +95,9 @@ jobs:
 
       - name: Harden using Openlane
         run: |
+          # Remove the existing compressed GDS that comes with the repo:
+          pwd
+          rm gds/*.gz
           make solo_squash_caravel
           make user_project_wrapper
 
@@ -192,6 +195,9 @@ jobs:
 
       - name: Harden using Openlane
         run: |
+          # Remove the existing compressed GDS that comes with the repo:
+          pwd
+          rm gds/*.gz
           make solo_squash_caravel
           make user_project_wrapper
 
