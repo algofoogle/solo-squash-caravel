@@ -1,8 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1679984322" />
-    <testcase name="test_start" classname="test_solo_squash_caravel" file="/home/zerotoasic/asic_tools/caravel_user_project/verilog/dv/solo_squash_caravel/test_solo_squash_caravel.py" lineno="80" time="30.226158618927002" sim_time_ns="761400.001" ratio_time="25190.101415110916" />
-    <testcase name="test_external_reset" classname="test_solo_squash_caravel" file="/home/zerotoasic/asic_tools/caravel_user_project/verilog/dv/solo_squash_caravel/test_solo_squash_caravel.py" lineno="143" time="0.14687776565551758" sim_time_ns="2440.000999999931" ratio_time="16612.459953418896" />
-    <testcase name="test_frame0" classname="test_solo_squash_caravel" file="/home/zerotoasic/asic_tools/caravel_user_project/verilog/dv/solo_squash_caravel/test_solo_squash_caravel.py" lineno="204" time="1048.5882782936096" sim_time_ns="16800440.001" ratio_time="16021.960524239044" />
-  </testsuite>
-</testsuites>

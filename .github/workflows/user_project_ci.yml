@@ -128,8 +128,10 @@ jobs:
 
       - name: Run DV RTL tests
         run: |
-          make verify-solo_squash_caravel-rtl
+          cd verilog/dv/solo_squash_caravel
+          make clean coco_test
         # run: |
+        #   make verify-solo_squash_caravel-rtl
         #   make verify-io_ports-rtl
         #   make verify-la_test1-rtl
         #   make verify-la_test2-rtl
@@ -138,8 +140,10 @@ jobs:
 
       - name: Run DV GL tests
         run: |
-          make verify-solo_squash_caravel-gl
+          cd verilog/dv/solo_squash_caravel
+          make clean coco_test_gl
         # run: |
+        #   make verify-solo_squash_caravel-gl
         #   make verify-io_ports-gl
         #   make verify-la_test1-gl
         #   make verify-la_test2-gl
@@ -227,8 +231,10 @@ jobs:
 
       - name: Run DV RTL tests
         run: |
-          make verify-solo_squash_caravel-rtl
+          cd verilog/dv/solo_squash_caravel
+          make clean coco_test
         # run: |
+        #   make verify-solo_squash_caravel-rtl
         #   make verify-io_ports-rtl
         #   make verify-la_test1-rtl
         #   make verify-la_test2-rtl
@@ -237,8 +243,10 @@ jobs:
 
       - name: Run DV GL tests
         run: |
-          make verify-solo_squash_caravel-gl
+          cd verilog/dv/solo_squash_caravel
+          make clean coco_test_gl
         # run: |
+        #   make verify-solo_squash_caravel-gl
         #   make verify-io_ports-gl
         #   make verify-la_test1-gl
         #   make verify-la_test2-gl
