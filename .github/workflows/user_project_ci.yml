@@ -51,6 +51,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [pdk]
     steps:
+      - name: Debug environment 1
+        run: |
+          pwd
+          ls -al
+          ls -al /
+          env
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -93,6 +99,9 @@ jobs:
           make openlane
           make simenv
 
+      - name: Export MCW_ROOT
+        run: echo "MCW_ROOT=/home/runner/work/caravel_user_project/mgmt_core_wrapper" >> $GITHUB_ENV
+
       - name: Harden using Openlane
         run: |
           # Remove the existing compressed GDS that comes with the repo:
@@ -126,9 +135,17 @@ jobs:
           path: |
             /home/runner/work/caravel_user_project/caravel_user_project/mpw_precheck_result/logs/*
 
+      - name: Debug environment 2
+        run: |
+          pwd
+          ls -al
+          ls -al /
+          env
+
       - name: Run DV RTL tests
         run: |
           cd verilog/dv/solo_squash_caravel
+          env
           make clean coco_test
         # run: |
         #   make verify-solo_squash_caravel-rtl
@@ -141,7 +158,7 @@ jobs:
       - name: Run DV GL tests
         run: |
           cd verilog/dv/solo_squash_caravel
-          make clean coco_test_gl
+          make clean coco_test SIM=gl
         # run: |
         #   make verify-solo_squash_caravel-gl
         #   make verify-io_ports-gl
@@ -244,7 +261,7 @@ jobs:
       - name: Run DV GL tests
         run: |
           cd verilog/dv/solo_squash_caravel
-          make clean coco_test_gl
+          make clean coco_test SIM=gl
         # run: |
         #   make verify-solo_squash_caravel-gl
         #   make verify-io_ports-gl
