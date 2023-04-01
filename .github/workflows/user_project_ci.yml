@@ -55,7 +55,8 @@ jobs:
         run: |
           pwd
           ls -al
-          ls -al /
+          ls -al ../
+          find /home -type d -maxdepth 4
           env
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -100,7 +101,7 @@ jobs:
           make simenv
 
       - name: Export MCW_ROOT
-        run: echo "MCW_ROOT=/home/runner/work/caravel_user_project/mgmt_core_wrapper" >> $GITHUB_ENV
+        run: echo "MCW_ROOT=/home/runner/work/solo-squash-caravel/solo-squash-caravel/mgmt_core_wrapper" >> $GITHUB_ENV
 
       - name: Harden using Openlane
         run: |
@@ -213,6 +214,9 @@ jobs:
           make install_mcw
           make openlane
           make simenv
+
+      - name: Export MCW_ROOT
+        run: echo "MCW_ROOT=/home/runner/work/solo-squash-caravel/solo-squash-caravel/mgmt_core_wrapper" >> $GITHUB_ENV
 
       - name: Harden using Openlane
         run: |
