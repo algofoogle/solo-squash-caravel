@@ -171,7 +171,7 @@ module wrapped_solo_squash(
         .speaker            (buf_io_out[18]),
 
         .debug_design_reset (buf_io_out[19]),
-        .debug_gpio_ready   (buf_io_out[20]),
+        .debug_gpio_ready   (buf_io_out[20])
 
         // I've commented these OEBs out for now because buf_io_oeb has outputs permanently
         // enabled. I'm OK with this for my design, and I want to avoid errors for now.
