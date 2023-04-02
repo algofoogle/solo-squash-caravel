@@ -145,8 +145,11 @@ module wrapped_solo_squash(
     `endif
     `endif
 
-    // permanently set oeb so that outputs are always enabled: 0 is output, 1 is high-impedance
-    assign buf_io_oeb = {`MPRJ_IO_PADS{1'b0}};
+    // Our design below asserts output enables 20:13 when active.
+    // For output enables not otherwise controlled by our design,
+    // set them permanently enabled (0 is output, 1 is high-impedance):
+    assign buf_io_oeb[`MPRJ_IO_PADS-1:21]   = {(`MPRJ_IO_PADS-21){1'b0}};
+    assign buf_io_oeb[12:0]                 = {13{1'b0}};
 
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
@@ -171,12 +174,10 @@ module wrapped_solo_squash(
         .speaker            (buf_io_out[18]),
 
         .debug_design_reset (buf_io_out[19]),
-        .debug_gpio_ready   (buf_io_out[20])
+        .debug_gpio_ready   (buf_io_out[20]),
 
-        // I've commented these OEBs out for now because buf_io_oeb has outputs permanently
-        // enabled. I'm OK with this for my design, and I want to avoid errors for now.
-        // .design_oeb         (buf_io_oeb[18:13]),
-        // .debug_oeb          (buf_io_oeb[20:19])
+        .design_oeb         (buf_io_oeb[18:13]),
+        .debug_oeb          (buf_io_oeb[20:19])
     );
 
 endmodule 
