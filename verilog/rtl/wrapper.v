@@ -4,7 +4,7 @@
 `endif
 
 `define USE_WB  1   // Using just wb_rst_i for my design's main reset.
-`define USE_LA  1
+// `define USE_LA  1
 `define USE_IO  1
 //`define USE_SHARED_OPENRAM 1
 //`define USE_MEM 1
@@ -151,6 +151,10 @@ module wrapped_solo_squash(
     assign buf_io_oeb[`MPRJ_IO_PADS-1:21]   = {(`MPRJ_IO_PADS-21){1'b0}};
     assign buf_io_oeb[12:0]                 = {13{1'b0}};
 
+    // Feed 'active' line back out thru IO[20] as our debug_gpio_ready,
+    // instead of via LA1, so we can exclude LA1 from our routing:
+    assign buf_io_out[20] = active;
+
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
     // Use the buffered outputs for your module's outputs.
@@ -158,7 +162,9 @@ module wrapped_solo_squash(
         .wb_clk_i           (wb_clk_i),
         .wb_rst_i           (wb_rst_i),
 
-        .gpio_ready         (la1_data_in[0]),   // In this wrapper, this is la_data_in[32].
+        // .gpio_ready         (la1_data_in[0]),   // In this wrapper, this is la_data_in[32].
+        // .debug_gpio_ready   (buf_io_out[20]),
+        //NOTE: gpio_ready (IO[20]) now comes via this wrapper itself, so we can exclude LA1 from our routing.
 
         .ext_reset_n        (io_in[ 8]),
         .pause_n            (io_in[ 9]),
@@ -174,7 +180,6 @@ module wrapped_solo_squash(
         .speaker            (buf_io_out[18]),
 
         .debug_design_reset (buf_io_out[19]),
-        .debug_gpio_ready   (buf_io_out[20]),
 
         .design_oeb         (buf_io_oeb[18:13]),
         .debug_oeb          (buf_io_oeb[20:19])

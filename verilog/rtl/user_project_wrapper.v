@@ -107,9 +107,11 @@ wrapped_solo_squash wrapped_solo_squash0(
     .wbs_dat_o      (wbs_dat_o),
 
     // Subset of Logic Analyzer:
-    .la1_data_in    (la_data_in[63:32]),
-    .la1_data_out   (la_data_out[63:32]),
-    .la1_oenb       (la_oenb[63:32]),
+    //NOTE: Not used anymore in our wrapped group submission.
+    // Instead the wrapper itself feeds back the internal 'active' line.
+    // .la1_data_in    (la_data_in[63:32]),
+    // .la1_data_out   (la_data_out[63:32]),
+    // .la1_oenb       (la_oenb[63:32]),
 
     // IO Pads; outputs are tristated inside our instance if active is low:
     .io_in          (io_in),
