@@ -27,12 +27,15 @@
     -   Pulses LA[32] when GPIO config is finished. This is seen via GPIO[20].
 */
 
-// PROJECT_ID of our design if used as part of a Zero to ASIC group submission.
+// wrapped_project_id.h can be used just to define the PROJECT_ID of our design,
+// only when used as part of a Zero to ASIC group submission.
+// Otherwise, it can be left empty, and then this firmware is suitable for a
+// stand-alone direct caravel implementation.
 //SMELL: PROJECT_ID (1 to 31?) is assigned by Matt Venn for group submissions,
 // but should probably be defined externally to this file (e.g. defined by
 // the compilation step) so that this file can remain generic and used in
 // other applications without being hardcoded for the wrapped_solo_caravel.
-#define PROJECT_ID 1
+#include "wrapped_project_id.h"
 
 // #define INPUT_MODE  0x0c02 // The OLD value for PULLUP, no longer considered valid?
 // #define INPUT_MODE  GPIO_MODE_USER_STD_INPUT_PULLUP //SMELL: Caravel PULLUP/DOWN might be broken; avoid for now.
