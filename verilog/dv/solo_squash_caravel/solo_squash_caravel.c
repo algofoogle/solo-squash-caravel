@@ -28,9 +28,8 @@
 */
 
 // wrapped_project_id.h can be used just to define the PROJECT_ID of our design,
-// only when used as part of a Zero to ASIC group submission.
-// Otherwise, it can be left empty, and then this firmware is suitable for a
-// stand-alone direct caravel implementation.
+// only when used as part of a Zero to ASIC group submission. If it doesn't
+// define PROJECT_ID, then the firmware will be compiled for our design as stand-alone.
 //SMELL: PROJECT_ID (1 to 31?) is assigned by Matt Venn for group submissions,
 // but should probably be defined externally to this file (e.g. defined by
 // the compilation step) so that this file can remain generic and used in
